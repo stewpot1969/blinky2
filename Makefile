@@ -22,3 +22,10 @@ prog:
 	--eval-command="monitor reset" \
 	--batch
 
+openocd:  $(NAME)-$(CORE).axf
+  openocd 1>/dev/null 2>/dev/null &
+
+killopenocd:
+  @./telnet.pl "shutdown"
+
+
